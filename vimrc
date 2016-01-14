@@ -6,3 +6,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "display line numbers
 set number
+
+"don't wrap words
+set tw=0
