@@ -9,3 +9,7 @@ set number
 
 "don't wrap words
 set tw=0
+
+"be able to search case insensitive, unless capital letters are used
+set ignorecase
+set smartcase
