@@ -53,7 +53,6 @@ bindsym XF86AudioMute exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 #Startup programs          
 exec xcompmgr -f
 exec feh --bg-fill ~/.i3/wallpaper.jpg --no-startup-id
-exec telegram
 exec xflux -l 51 -g 14 -k 2700 --no-startup-id
 
 #Workspace assignments
