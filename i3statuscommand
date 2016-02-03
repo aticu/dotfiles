@@ -3,25 +3,20 @@
 i3status | while :
 do
         read line
-	if [ $(cat /sys/class/power_supply/BAT0/status) = "Charging" ]
+	bat_level=$(cat /sys/class/power_supply/BAT0/capacity) 
+	if [ $bat_level -gt 75 ]
 	then
-        	python -c "print '$line'.replace('CHR ', ' ')" || exit 1
+       		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
+	elif [ $bat_level -gt 50 ]
+	then
+       		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
+	elif [ $bat_level -gt 25 ]
+	then
+		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
+	elif [ $bat_level -gt 10 ]
+	then
+		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
 	else
-		bat_level=$(cat /sys/class/power_supply/BAT0/capacity) 
-		if [ $bat_level -gt 75 ]
-		then
-        		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-		elif [ $bat_level -gt 50 ]
-		then
-        		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-		elif [ $bat_level -gt 25 ]
-		then
-			python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-		elif [ $bat_level -gt 10 ]
-		then
-			python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-		else
-			python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-		fi
+		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
 	fi
 done
