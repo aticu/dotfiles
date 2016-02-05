@@ -41,6 +41,7 @@ set $bordercolor #1d3300
 set $textcolor #8f8f8f
 set $importantcolor #e68a00
 set $activecolor #ffffff
+set $calendercolor #1a74e7
 
 #Hotkeys
 bindsym XF86Sleep exec sudo shutdown -h now
@@ -49,6 +50,7 @@ bindsym XF86Calculator exec galculator
 bindsym Print exec scrot '%Y-%m-%d-%T_screen.png' -e 'mv $f ~/Pictures/screenshots/'
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioMute exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod+c exec --no-startup-id cal | head -n -1 | tail -n +2 | rofi -dmenu -lines 7 -width -22 -bc "$calendercolor" -bg "$calendercolor" -fg "$importantcolor" -hlbg "$backgroundcolor" -hlfg "$importantcolor" -select "$(date +%-d)" -p "$(date +%-d)$(test \"$(date +%-d)\" = \"1\" -o \"$(date +%-d)\" = \"21\" -o \"$(date +%-d)\" = \"31\" && echo st || (test \"$(date +%-d)\" = \"2\" -o \"$(date +%-d)\" = \"22\" && echo nd) || (test \"$(date +%-d)\" = \"3\" -o \"$(date +%-d)\" = \"23\" && echo rd) || echo th)$(cal | head -n +1 | tail -c +$(echo $(expr length \"$(date +%-d)\")+1 | bc)) "
 
 #Startup programs          
 exec xcompmgr -f
