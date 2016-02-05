@@ -4,16 +4,16 @@ i3status | while :
 do
         read line
 	bat_level=$(cat /sys/class/power_supply/BAT0/capacity) 
-	if [ $bat_level -gt 75 ]
+	if [ $bat_level -gt 76 ]
 	then
        		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-	elif [ $bat_level -gt 50 ]
+	elif [ $bat_level -gt 51 ]
 	then
        		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-	elif [ $bat_level -gt 25 ]
+	elif [ $bat_level -gt 26 ]
 	then
 		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
-	elif [ $bat_level -gt 10 ]
+	elif [ $bat_level -gt 11 ]
 	then
 		python -c "print '$line'.replace('BAT ', ' ')" || exit 1
 	else
