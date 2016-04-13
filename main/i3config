@@ -47,6 +47,7 @@ set $calendercolor #1a74e7
 bindsym XF86Sleep exec sudo shutdown -h now
 bindsym XF86Mail exec thunar
 bindsym XF86Calculator exec galculator
+bindsym $mod+d exec python3 ~/.i3/i3-hud-menu.py
 bindsym Print exec scrot '%Y-%m-%d-%T_screen.png' -e 'mv $f ~/Pictures/screenshots/'
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioMute exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
@@ -56,6 +57,8 @@ bindsym Menu exec --no-startup-id cal | head -n -1 | tail -n +2 | rofi -dmenu -l
 exec xcompmgr -f
 exec feh --bg-fill ~/.i3/wallpaper.jpg --no-startup-id
 exec xflux -l 51 -g 14 -k 2700 --no-startup-id
+exec numlockx on
+exec python3 ~/.i3/i3-appmenu-service.py
 
 #Workspace assignments
 assign [title="Spotify"] → $tag5
@@ -190,7 +193,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'pkill xflux; i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -244,8 +247,8 @@ bar {
 #		urgent_workspace	#aa0000		#990000			#ffffff
 	}
 	strip_workspace_numbers yes
-        #status_command py3status -c ~/.i3status.conf
-	status_command i3status
+        status_command py3status
+	#status_command  ~/.i3/statusCommand
 	position top
 	tray_output primary
 }

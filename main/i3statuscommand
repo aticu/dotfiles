@@ -1,0 +1,14 @@
+#!/bin/bash
+
+i3status | while :
+do
+	read line
+	if grep -q spotify <(qdbus)
+	then
+		artistLine=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep artist)
+		titleLine=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title)
+		python2 -c "print('$line'.replace('spotify', '${artistLine:14} - ${titleLine:13}'))"
+	else
+		python2 -c "print('$line'.replace('spotify', ''))"
+	fi
+done
