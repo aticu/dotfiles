@@ -15,13 +15,19 @@ app-shells/zsh
 app-text/evince
 app-text/texlive
 dev-haskell/gtk
+dev-java/oracle-jdk-bin
+dev-lang/mono
 dev-perl/Gtk2-AppIndicator
 dev-python/dbus-python
+dev-python/pip
 dev-python/pygobject
 dev-python/pygtk
 dev-qt/qdbus
 dev-tex/texmfind
+dev-util/eclipse-sdk-bin
 dev-util/gtk-doc
+dev-util/idea
+dev-util/monodevelop
 dev-util/ninja-ide
 dev-vcs/bzr
 dev-vcs/bzr-gtk
@@ -31,6 +37,7 @@ lxde-base/lxdm
 media-gfx/blender
 media-gfx/feh
 media-gfx/gimp
+media-gfx/imagemagick
 media-gfx/scrot
 media-gfx/shotwell
 media-sound/alsa-utils
@@ -74,6 +81,7 @@ x11-base/xorg-x11
 x11-drivers/nvidia-drivers
 x11-misc/appmenu-qt
 x11-misc/dmenu
+x11-misc/i3lock
 x11-misc/i3status
 x11-misc/numlockx
 x11-misc/py3status
