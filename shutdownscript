@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(echo 'shutdown?' | rofi -dmenu -lines 1 -width 6 -bc '#1a3300' -bg '#1a3300' -fg '#8f8f8f' -hlbg '#274d00' -hlfg '#e68a00' -p '         ')" = "shutdown?" ]
+then
+	sudo shutdown -h now
+fi
+
