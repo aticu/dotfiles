@@ -10,8 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
-set $leftScreen "DVI-I-1"
-set $rightScreen "DVI-I-2"
+set $leftScreen "DVI-D-2"
+set $rightScreen "DVI-D-1"
 
 #Custom config
 hide_edge_borders both
@@ -44,7 +44,7 @@ set $activecolor #ffffff
 set $calendercolor #1a74e7
 
 #Hotkeys
-bindsym XF86Sleep exec sudo shutdown -h now
+bindsym XF86Sleep exec sudo ~/.i3/shutdownscript
 bindsym XF86Mail exec thunar
 bindsym XF86Calculator exec galculator
 bindsym $mod+d exec python3 ~/.i3/i3-hud-menu.py

@@ -3,7 +3,6 @@
 #used to easily update all the configuration files
 cp /home/niclas/.i3/config i3config
 cp /home/niclas/.i3/statusCommand i3statuscommand
-cp /home/niclas/.xinitrc xinitrc
 cp /usr/src/linux/.config kernel.config
 cp /etc/portage/make.conf make.conf
 cp /var/lib/portage/world world
