@@ -17,9 +17,11 @@ nnoremap <silent> <Leader>c :nohl<CR><C-l>
 vnoremap . :normal .<CR>
 
 "file related stuff
-map <Leader>p :tabp<CR>
-map <Leader>n :tabn<CR>
-map <Leader>e :tabe 
+map <Leader>p :p<CR>
+map <Leader>n :n<CR>
+map <Leader>e :hide edit 
+map <Leader>f :hide find 
+map <Leader>b :b 
 
 "display line numbers
 set number
@@ -30,8 +32,15 @@ set tw=0
 
 "toggle relative numbers with ,r
 map <Leader>r :set relativenumber!<CR>
-"default to relative numbers
-set relativenumber
+
+"save quicker
+map <Leader>w :w<CR>
+
+"make quicker
+map <Leader>m :w<CR>:!make<CR>
+
+let g:netrw_banner=0
+let g:netrw_liststyle=3
 
 "be able to search case insensitive, unless capital letters are used
 set ignorecase
@@ -45,6 +54,12 @@ set incsearch
 
 "better pasting of other files
 set paste
+
+"search into subfolders
+set path=,,**
+
+"display all files in tab complete
+set wildmenu
 
 "use 4 tabs
 set tabstop=4
