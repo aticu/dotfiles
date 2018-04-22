@@ -45,6 +45,7 @@ set $activecolor #ffffff
 set $calendercolor #1a74e7
 
 #Hotkeys
+bindsym $mod+Return exec terminology
 bindsym XF86Sleep exec sudo ~/.i3/shutdownscript
 bindsym XF86Mail exec thunar
 bindsym XF86Calculator exec galculator
@@ -55,15 +56,15 @@ bindsym XF86AudioMute exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym Menu exec --no-startup-id cal | head -n -1 | tail -n +2 | rofi -dmenu -lines 7 -width -22 -bc "$calendercolor" -bg "$calendercolor" -fg "$importantcolor" -hlbg "$backgroundcolor" -hlfg "$importantcolor" -select "$(date +%-d)" -p "$(date +%-d)$(test \"$(date +%-d)\" = \"1\" -o \"$(date +%-d)\" = \"21\" -o \"$(date +%-d)\" = \"31\" && echo st || (test \"$(date +%-d)\" = \"2\" -o \"$(date +%-d)\" = \"22\" && echo nd) || (test \"$(date +%-d)\" = \"3\" -o \"$(date +%-d)\" = \"23\" && echo rd) || echo th)$(cal | head -n +1 | tail -c +$(echo $(expr length \"$(date +%-d)\")+1 | bc)) "
 
 #Startup programs          
+exec ~/.i3/fixdesktop
 exec xcompmgr -f
-exec feh --bg-fill ~/.i3/wallpaper.jpg --no-startup-id
 exec xflux -l 51 -g 14 -k 2700 --no-startup-id
-exec numlockx on
 exec redshift-gtk
 exec udiskie -t
 exec volumeicon
 exec ~/Projects/Scripts/statuscommand
 exec python3 ~/.i3/i3-appmenu-service.py
+exec google-chrome-stable
 
 #Workspace assignments
 assign [title="Spotify"] → $tag5
@@ -91,12 +92,8 @@ font pango:envypen mono 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec lilyterm
-
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+F4 kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
