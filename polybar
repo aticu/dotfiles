@@ -36,11 +36,11 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "FontAwesome:size=11"
-font-1 = "Noto Sans:size=11;1"
+font-1 = "Noto Sans:size=11"
 
 modules-left = i3
 modules-center = title
-modules-right = backlight-acpi wlan eth battery volume temperature date powermenu
+modules-right = backlight-acpi wlan eth battery volume load_average temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -58,6 +58,13 @@ type = internal/xwindow
 
 format = <label>
 label = %title%
+
+[module/load_average]
+type = custom/script
+exec = uptime | python -c "print(input().split(' ')[-3][:-1])"
+interval = 5.0
+
+label =  %output%
 
 [module/i3]
 type = internal/i3
@@ -142,7 +149,7 @@ interface = enp0s31f6
 interval = 10.0
 
 format-connected = <label-connected>
-label-connected = %local_ip%
+label-connected =  %local_ip%
 label-connected-foreground = ${colors.connected}
 
 format-disconnected = <label-disconnected>
