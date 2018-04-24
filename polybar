@@ -40,7 +40,7 @@ font-1 = "Noto Sans:size=11"
 
 modules-left = i3
 modules-center = title
-modules-right = backlight-acpi wlan eth battery volume load_average temperature date powermenu
+modules-right = backlight-acpi wlan eth battery volume load_average temperature time date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -58,6 +58,7 @@ type = internal/xwindow
 
 format = <label>
 label = %title%
+label-maxlen = 50
 
 [module/load_average]
 type = custom/script
@@ -156,11 +157,17 @@ label-disconnected-foreground = ${colors.disconnected}
 type = internal/date
 interval = 1
 
-date = " %d.%m.%Y"
+date = %{A1:gsimplecal:}%d.%m.%Y%{A}
 
-time = "%H:%M:%S"
+label = %date%
 
-label = %time% | %date%
+[module/time]
+type = internal/date
+interval = 1
+
+time = %H:%M:%S
+
+label = %time%
 
 [module/volume]
 type = internal/volume
