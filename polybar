@@ -108,10 +108,10 @@ bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = =
 bar-fill-font = 2
 bar-fill-foreground = ${colors.foreground}
-bar-empty = ─
+bar-empty = =
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
@@ -195,7 +195,7 @@ ramp-volume-2 = 
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 80
+full-at = 92
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = 
@@ -207,7 +207,7 @@ format-discharging-underline = ${self.format-charging-underline}
 label-discharging = %percentage%% (%time%)
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.connected}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
