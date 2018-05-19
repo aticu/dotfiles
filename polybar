@@ -40,7 +40,7 @@ font-1 = "Noto Sans:size=11"
 
 modules-left = i3
 modules-center = title
-modules-right = backlight-acpi wlan eth battery volume load_average temperature time date powermenu
+modules-right = backlight-acpi wlan eth no_internet battery volume load_average temperature time date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -152,6 +152,14 @@ label-connected-foreground = ${colors.connected}
 format-disconnected = <label-disconnected>
 label-disconnected = %ifname% 
 label-disconnected-foreground = ${colors.disconnected}
+
+[module/no_internet]
+type = custom/script
+
+exec = ping -q -w1 -c1 8.8.8.8 >/dev/null && echo "" || echo "Offline"
+format-foreground = ${colors.disconnected}
+
+interval = 10
 
 [module/date]
 type = internal/date
