@@ -67,6 +67,8 @@ plugins=(git catimg zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=196'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
