@@ -11,6 +11,9 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context time dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time)
 POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='075'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='075'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='135'
 #ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
