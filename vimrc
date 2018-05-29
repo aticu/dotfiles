@@ -18,17 +18,16 @@ filetype on
 "avoid having to save every time I want to switch buffers
 set hidden
 
-"enable the :w!! command to save files using root access
-cmap w!! w !sudo tee > /dev/null %
+"enable clipboard yanking
+set clipboard=unnamedplus
 
 "eye candy
+set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
 syntax on
-"set background=dark
-"colorscheme solarized
-highlight CursorLine cterm=standout "highlight the current line
-
-"redraw the screen and remove search highlighting
-nnoremap <silent> <Leader>c :nohl<CR><C-l>
+colorscheme thaumaturge
+highlight Normal ctermbg=none
 
 "repeat for each line in selection with .
 vnoremap . :normal .<CR>
@@ -37,12 +36,6 @@ vnoremap . :normal .<CR>
 noremap <Leader>e :hide edit 
 noremap <Leader>f :hide find 
 noremap <Leader>b :b 
-
-"debugging
-noremap <Leader>p :cprev<CR>
-noremap <Leader>n :cnext<CR>
-noremap <Leader>c :cclose<CR>
-noremap <Leader>o :copen<CR>
 
 "display line numbers
 set number
@@ -53,6 +46,9 @@ set tw=0
 
 "toggle relative numbers with ,l
 noremap <Leader>l :set relativenumber!<CR>
+
+"toggle line numbers with ,n
+noremap <Leader>n :set number!<CR>
 
 "save quicker
 noremap <Leader>w :w<CR>
@@ -66,9 +62,6 @@ function g:LoadLocalVimrc()
         source $PWD/.vimrc
     endif
 endfunction
-
-let g:netrw_banner=0
-let g:netrw_liststyle=3
 
 "be able to search case insensitive, unless capital letters are used
 set ignorecase
@@ -139,9 +132,10 @@ autocmd FileType comments.txt nnoremap ;a20 IA2:<Space>0P.<Esc>
 autocmd FileType comments.txt nnoremap ;a21 IA2:<Space>1P.<Esc>
 autocmd FileType comments.txt nnoremap ;a22 IA2:<Space>2P.<Esc>
 autocmd FileType comments.txt nnoremap ;a23 IA2:<Space>3P.<Esc>
+autocmd FileType comments.txt nnoremap ;ka IKeine<Space>Abgabe.<Esc>
 "STUDENT GRADING SPECIFIC END
 
-"LATEX SPECIFC
+"LATEX SPECIFIC
 
 
-"LATEX SPECIFC END
+"LATEX SPECIFIC END

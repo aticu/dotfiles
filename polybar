@@ -156,7 +156,7 @@ label-disconnected-foreground = ${colors.disconnected}
 [module/no_internet]
 type = custom/script
 
-exec = ping -q -w1 -c1 8.8.8.8 >/dev/null && echo "" || echo "Offline"
+exec = ping -q -w1 -c1 8.8.8.8 >/dev/null 2>/dev/null && echo "" || echo "Offline"
 format-foreground = ${colors.disconnected}
 
 interval = 10
