@@ -94,3 +94,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=196'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=/usr/bin/vim
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
