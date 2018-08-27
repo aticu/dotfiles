@@ -40,7 +40,7 @@ font-1 = "Noto Sans:size=11"
 
 modules-left = i3
 modules-center = title
-modules-right = backlight-acpi wlan eth no_internet battery volume load_average temperature time date powermenu
+modules-right = spotify_song backlight-acpi wlan eth no_internet battery volume load_average temperature time date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -66,6 +66,11 @@ exec = uptime | python -c "print(input().split(' ')[-3][:-1])"
 interval = 5.0
 
 label =  %output%
+
+[module/spotify_song]
+type = custom/script
+
+exec = getSpotifySong | cut -c -40
 
 [module/i3]
 type = internal/i3
@@ -235,8 +240,8 @@ format-underline =
 format-warn = <ramp> <label-warn>
 format-warn-underline = #f50a4d
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = 

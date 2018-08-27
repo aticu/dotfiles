@@ -4,12 +4,9 @@ android-tools
 appmenu-qt4
 arandr
 arj
-arm-linux-gnueabihf-gcc
 aspell-de
 aspell-en
 atom
-autoconf-2.64
-automake-1.11
 avr-binutils
 avr-gcc
 avr-libc
@@ -25,7 +22,6 @@ bzip2
 cabextract
 cloc
 cmake
-code
 coreutils
 cpio
 cryptsetup
@@ -42,7 +38,6 @@ docker
 dos2unix
 dunst
 e2fsprogs
-eclipse-java
 efibootmgr
 ethtool
 evince
@@ -109,7 +104,6 @@ make
 man-db
 man-pages
 mdadm
-monodevelop-stable
 mpv
 mtools
 nano
@@ -125,7 +119,6 @@ os-prober
 otf-font-awesome-4
 ovmf
 p7zip
-package-query
 pacman
 pacman-contrib
 pandoc
@@ -133,13 +126,11 @@ parted
 patch
 pavucontrol
 pciutils
-pcmciautils
 pdfjs
 perl
 perl-html-parser
 perl-image-exiftool
 pkgconf
-plover
 polybar
 postgresql
 powerline
@@ -168,7 +159,6 @@ shadow
 shotwell
 spotify
 sshfs
-steam
 strace
 subversion
 sudo
@@ -179,7 +169,6 @@ tar
 teensy-loader-cli
 telegram-desktop-bin
 terminology
-terminology-themes-git
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -207,7 +196,6 @@ ttf-liberation
 ttf-opensans
 ttf-raleway
 udiskie
-umbrello
 unrar
 usbutils
 util-linux
@@ -221,8 +209,6 @@ w3m
 wget
 which
 wireshark-gtk
-x86_64-unknown-redox-binutils-git
-x86_64-unknown-redox-gcc-freestanding-git
 xclip
 xcompmgr
 xdotool
